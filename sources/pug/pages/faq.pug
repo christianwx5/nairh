@@ -1,0 +1,63 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-card
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'FAQ'
+block page
+	// Header Default
+	include ../sections/header/_header-default
+
+	// Breadcrumbs
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'bg-image-11-1920x663'
+	})
+
+	// Accordion
+	section.section.section-md.bg-gray-100.text-center
+		.container
+			.row.justify-content-center
+				.col-lg-9.col-xl-8
+					// Bootstrap collapse
+					#accordion1.card-group-custom.card-group-corporate( role='tablist' aria-multiselectable='false' )
+						+card({
+							show: true,
+							parentId: 'accordion1',
+							title: 'Do you provide any scripts with your templates?'
+						}).card-corporate
+							p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.TemplateTuning.com If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.
+
+						+card({
+							parentId: 'accordion1',
+							title: 'What are the advantages of purchasing a website template?'
+						}).card-corporate
+							p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality.
+						+card({
+							parentId: 'accordion1',
+							title: 'What do I receive when I order a template from Zemez?'
+						}).card-corporate
+							p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+						+card({
+							parentId: 'accordion1',
+							title: 'In what formats are your templates available?'
+						}).card-corporate
+							p Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file. In most templates, HTML is compatible with Adobe® Dreamweaver® and Microsoft® FrontPage®.
+						+card({
+							parentId: 'accordion1',
+							title: 'What am I allowed to do with the templates?'
+						}).card-corporate
+							p You may build a website using the template in any way you like. You may not resell or redistribute templates (like we do); claim intellectual or exclusive ownership to any of our products, modified or unmodified. All products are property of content providing companies and individuals. You are also not allowed to make more than one project using the same template (you have to purchase the same template once more in order to make another project with the same design).
+						+card({
+							parentId: 'accordion1',
+							title: 'What is a unique/non-unique purchase?'
+						}).card-corporate
+							p Non-exclusive purchase means that other people can buy the template you have chosen some time later. Exclusive or unique purchase guarantees that you are the last person to buy this template. After an exclusive purchase occurs the template is being permanently removed from the sales directory and will never be available to other customers again. Only you and people who bought the template before you will own it.
+
+
+
+	// Footer Classic
+	include ../sections/footer/_footer-classic

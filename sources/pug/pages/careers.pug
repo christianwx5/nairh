@@ -1,0 +1,74 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Careers'
+block page
+	// Header Default
+	include ../sections/header/_header-default
+
+	// Breadcrumbs
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'bg-image-11-1920x663'
+	})
+
+	// Careers about
+	section.section.section-lg.bg-default
+		.container
+			.row.row-30.align-items-md-center
+				.col-lg-6.text-center
+					+jpg('careers-01-570x368')
+				.col-lg-6
+					.careers-block
+						h3 Benefits and rewards
+						p Sit amet massa vitae tortor condimentum lacinia. Orci dapibus ultrices in iaculis nunc. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Urna porttitor rhoncus dolor purus non enim:
+						ul.careers-block-list
+							li Healthcare and wellness benefits
+							li Retirement and financial protection
+							li Employee development programs
+						a.button.button-lesser.button-secondary(href='#') join our team now
+
+	// Careers table
+	section.section.section-lg.bg-default
+		.container
+			h3.font-weight-medium Opened Positions
+
+			.table-custom-responsive.table-careers-wrap
+				table.table-custom.table-careers
+					thead
+						tr
+							th Job Posting Title
+							th Location
+							th Date
+							th Time
+
+					tbody
+						tr
+							td Lead Teacher
+							td Washington, D.C.
+							td January 8, 2018
+							td Full Time
+						tr
+							td Music Teacher
+							td New York, NY
+							td January 3, 2018
+							td Full Time
+						tr
+							td Head Start Teacher
+							td San Diego, CA
+							td January 2, 2018
+							td Full Time
+						tr
+							td Assistant Teacher
+							td Washington, D.C.
+							td January 2, 2018
+							td Full Time
+
+
+	// Footer Classic
+	include ../sections/footer/_footer-classic

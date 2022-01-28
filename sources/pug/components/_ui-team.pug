@@ -1,0 +1,9 @@
+mixin team(obj)
+	.team
+		.team-inner
+			.team-image: +jpg(obj.image)
+			.team-content
+				h5= obj.title
+				.team-office: span= obj.office
+				.team-divider
+				a(href='mailto:#') info@demolink.org

@@ -1,0 +1,63 @@
+mixin news-standard(obj)
+	article.news-standard
+		.news-standard-image
+			a(href= links.post): +jpg(obj.image)
+		.news-standard-body
+			h4.news-standard-title: a(href= links.post)= obj.title
+			ul.list-inline-divided
+				li
+					span.icon.icon-xs.icon-primary.mdi.mdi-clock
+					a(href= links.post)= obj.time
+				li
+					span.icon.icon-xs.icon-primary.mdi.mdi-thumb-up-outline
+					a(href= links.post) 23
+				li
+					span.icon.icon-xs.icon-primary.mdi.mdi-message-outline
+					a(href= links.post) 6
+
+
+mixin news-full-width(obj)
+	article.news-full-width
+		.news-full-width-image
+			a(href= links.post)
+				+jpg(obj.image)
+		.news-full-width-body
+			h4: a(href= links.post)= obj.title
+			ul.list-inline-divided
+				li
+					span.icon.icon-xs.icon-primary.mdi.mdi-clock
+					a(href= links.post)= obj.time
+			p= obj.text
+
+
+mixin tab-news(obj)
+	span.heading-5= obj.title
+	ul.list-inline-divided
+		li
+			span.icon.icon-xs.icon-primary.mdi.mdi-clock
+			a(href= links.post)= obj.time
+		li
+			span.icon.icon-xs.icon-primary.mdi.mdi-thumb-up-outline
+			a(href= links.post) 23
+		li
+			span.icon.icon-xs.icon-primary.mdi.mdi-message-outline
+			a(href= links.post) 6
+	span= obj.text
+
+
+mixin news-recent(obj)
+	article.news-recent
+		.news-recent-image
+			a(href= links.post): +jpg(obj.image)
+		.news-recent-body
+			h5.news-recent-title: a(href= links.post)= obj.title
+			ul.list-inline-divided
+				li
+					span.icon.icon-xs.icon-secondary.mdi.mdi-clock
+					a(href= links.post)= obj.time
+				li
+					span.icon.icon-xs.icon-secondary.mdi.mdi-thumb-up-outline
+					a(href= links.post) 23
+				li
+					span.icon.icon-xs.icon-secondary.mdi.mdi-message-outline
+					a(href= links.post) 6

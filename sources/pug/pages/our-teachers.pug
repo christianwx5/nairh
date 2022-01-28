@@ -1,0 +1,147 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-testimonials
+include ../components/_ui-team
+
+
+block variables
+	- var activeCategory = 'about-us'
+	- var pageName = 'Our Teachers'
+block page
+	// Header Default
+	include ../sections/header/_header-default
+
+	// Breadcrumbs
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'bg-image-11-1920x663'
+	})
+
+
+	section.section.section-lg.bg-default
+		.container
+			// Bootstrap tabs
+			#tabs-2.tabs-custom.tabs-about.tabs-corporate
+				// Nav tabs
+				ul.nav.nav-tabs
+					li.nav-item(role='presentation'): a.nav-link(href='#tabs-2-1' data-toggle='tab' data-breadcrumbs-bg='images/bg-image-05-1920x687.jpg') Overview
+					li.nav-item(role='presentation'): a.nav-link(href='#tabs-2-2' data-toggle='tab' data-breadcrumbs-bg='images/bg-image-02-1920x674.jpg') Our History
+					li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-2-3' data-toggle='tab' data-breadcrumbs-bg='images/bg-image-04-1920x615.jpg') Our Teachers
+					li.nav-item(role='presentation'): a.nav-link(href='#tabs-2-4' data-toggle='tab' data-breadcrumbs-bg='images/bg-image-03-1920x789.jpg') Testimonials
+
+				// Tab panes
+				.tab-content
+					div#tabs-2-1.tab-pane.fade
+						h3 What is Preschool Education?
+						.community-wrap
+							.community
+								.community-inner
+									.community-image: +jpg('overview-01-364x341')
+									.community-content
+										h4: a(href='#') Growth Opportunity
+										p Diam maecenas sed enim ut sem viverra. Risus pretium quam vulputate dignissim suspendisse in. Sed blandit libero volutpat sed cras ornare arcu dui vivamus. Pharetra pharetra massa massa ultricies mi quis hendrerit.
+							.community
+								.community-inner
+									.community-image: +jpg('overview-02-364x341')
+									.community-content
+										h4: a(href='#') Parents’ Involvement
+										p Faucibus nisl tincidunt eget nullam non nisi est sit amet. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Mattis molestie a iaculis at erat pellentesque. Neque vitae tempus quam.
+
+
+					div#tabs-2-2.tab-pane.fade
+						h3 Our History
+						.history-wrap
+							.history
+								.history-time: span 1981
+								.history-item
+									.history-item-image: +jpg('history-01-299x268')
+									.history-item-body
+										.history-item-body-content
+											h5.text-secondary-dark: a.link-hover-2(href='#') Establishing Preschool
+											p Risus nec feugiat in fermentum. Sed libero enim sed faucibus turpis. Mauris pharetra et ultrices neque. Interdum posuere lorem ipsum dolor.
+							.history
+								.history-time: span 2010
+								.history-item
+									.history-item-image: +jpg('history-02-299x268')
+									.history-item-body
+										.history-item-body-content
+											h5: a.link-hover-2(href='#') Step by Step Development
+											p Ornare arcu dui vivamus arcu felis bibendum ut tristique. Sed faucibus turpis in eu mi. Ullamcorper dignissim cras tincidunt lobortis.
+							.history
+								.history-time: span 2016
+								.history-item
+									.history-item-image: +jpg('history-03-299x268')
+									.history-item-body
+										.history-item-body-content
+											h5: a.link-hover-2(href='#') Better Educational Standards
+											p Luctus accumsan tortor posuere ac ut consequat semper viverra. Enim ut sem viverra aliquet eget sit amet. A scelerisque purus semper eget.
+
+					div#tabs-2-3.tab-pane.fade.show.active
+						h3 Our Teachers
+						.team-wrap
+							.row.row-30
+								.col-sm-10.col-md-6
+									+team({
+										image: 'teachers-01-124x134',
+										title: 'Lana Smith',
+										office: 'Executive Director'
+									})
+								.col-sm-10.col-md-6
+									+team({
+										image: 'teachers-02-124x134',
+										title: 'Ray Mitchell',
+										office: 'Lead Teacher'
+									})
+								.col-sm-10.col-md-6
+									+team({
+										image: 'teachers-03-124x134',
+										title: 'John Doe',
+										office: 'Pre-School Teacher'
+									})
+								.col-sm-10.col-md-6
+									+team({
+										image: 'teachers-04-124x134',
+										title: 'Rachel Wood',
+										office: 'Assistant Teacher'
+									})
+
+					div#tabs-2-4.tab-pane.fade.text-center.text-md-left
+						h3 Testimonials
+						.testimonial-wrap
+							.row.row-50.justify-content-center
+								.col-sm-10.col-md-6
+									+testimonial({
+										image: 'testimonial-02-136x149',
+										text: 'Proin nibh nisl condimentum id. Orci a scelerisque purus semper eget duis at. A iaculis at erat pellentesque adipiscing commodo elit at.',
+										name: 'Sam Peterson',
+										office: 'Fitness Coach'
+									})
+								.col-sm-10.col-md-6
+									+testimonial({
+										image: 'testimonial-03-136x149',
+										text: 'Sed faucibus turpis in eu mi bibendum. Blandit turpis cursus in hac habitasse. Cursus in hac habitasse platea dictumst quisque sagittis purus.',
+										name: 'Linda Gray',
+										office: 'Sales Manager'
+									})
+								.col-sm-10.col-md-6
+									+testimonial({
+										image: 'testimonial-01-136x149',
+										text: 'Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit lectus.',
+										name: 'Jane Wilson',
+										office: 'Housewife'
+									})
+								.col-sm-10.col-md-6
+									+testimonial({
+										image: 'testimonial-04-136x149',
+										text: 'Convallis tellus id interdum velit laoreet id donec ultrices. Sed lectus vestibulum mattis ullamcorper velit. Donec enim diam vulputate ut.',
+										name: 'Andrew Davis',
+										office: 'Taxi Driver'
+									})
+
+
+
+
+	// Footer Classic
+	include ../sections/footer/_footer-classic

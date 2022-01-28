@@ -1,0 +1,19 @@
+include ../../components/_ui-video
+
+section.section.bg-default.section-lg
+	.container
+		.row.row-30
+			.col-md-5
+				.about-info
+					h2 About Us
+					p Life at PreSchool is all about learning through play and having fun in a warm, stimulating environment. Every child is different and unique here. Our nursery school offers:
+					ul.list-square
+						li: a(href='#') Grammar Programs
+						li: a(href='#') Afterschool Activities
+						li: a(href='#') Language Lessons
+					a.button.button-primary(href='#') Read more
+			.col-md-7
+				+video-youtube({
+					image: 'about-01-668x409',
+					videoLink: links.videoYoutube
+				})

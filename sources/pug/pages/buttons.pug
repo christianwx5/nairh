@@ -1,0 +1,74 @@
+extends  ../_skeleton
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Buttons'
+
+block page 
+  // Page Header
+  include ../sections/header/_header-default
+
+  // Breadcrumbs
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    bgImage: 'bg-image-11-1920x663'
+  })
+  // Button Sizes
+  section.section.section-lg.bg-default.text-center
+    .container
+      h4 Button Sizes
+      p.offset-top-1 4 different sizes: super, large, default and small.
+      .group-xl.group-middle
+        .button.button-xl.button-primary-light Super Size
+        .button.button-lg.button-primary-light Large size
+        .button.button-primary-light Default size
+        .button.button-sm.button-primary-light Small size
+
+  hr
+
+  // Button Shapes
+  section.section.section-lg.bg-default.text-center
+    .container
+      h4 Button Shapes
+      p.offset-top-1 4 different shapes: default, round, round 2, and circle.
+      .group-xl.group-middle
+        .button.button-primary-light Default
+        .button.button-primary-light.button-round-1 Round 1
+        .button.button-primary-light.button-round-2 Round 2
+        .button.button-primary-light.button-circle Circle
+
+  hr
+
+  // Buttons with Icons
+  section.section.section-lg.bg-default.text-center
+    .container
+      h4 Buttons with Icons
+      p.offset-top-1 Buttons are fully integrated with 900+ icons.
+      .group-xl.group-middle
+        .button.button-icon.button-icon-right.button-primary-light
+          span.icon.mdi.mdi-account
+          | Icon right
+        .button.button-icon.button-icon-left.button-primary-light
+          span.icon.mdi.mdi-account
+          | Icon left
+        .button.button-icon.button-icon-right.button-default-outline
+          span.icon.mdi.mdi-account
+          | Icon right
+        .button.button-icon.button-icon-left.button-default-outline
+          span.icon.mdi.mdi-account
+          | Icon left
+
+  hr
+
+  // Buttons with Shadow
+  section.section.section-md.bg-default.text-center
+    .container
+      h4 Buttons with Shadow
+      p.offset-top-1 Enhance your buttons with a shadow effect.
+      .group-xl.group-middle
+        .button.button-primary-light.button-circle.button-shadow Shadow
+        .button.button-ghost.button-circle.button-shadow Shadow
+
+  // Page Footer
+  include ../sections/footer/_footer-classic

@@ -1,0 +1,7 @@
+mixin testimonial(obj)
+	.testimonial
+		.testimonial-image: +jpg(obj.image)
+		p= obj.text
+		ul.list-inline-divided
+			li: span.testimonial-name= obj.name
+			li: span.testimonial-office= obj.office

@@ -1,0 +1,79 @@
+/*
+* Links
+*/
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	@include link($link-color, $link-hover-color);
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-hover-2 {
+	color: $secondary-dark!important;
+	&:hover {
+		color: $gray-800!important;
+	}
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.privacy-link {
+}
+
+* + .privacy-link {
+	margin-top: 25px;
+}
+
+
+.brands {
+	img {
+		transition: .3s ease-out all;
+	}
+	
+	&:hover {
+	  img {
+			opacity: .6;
+		}
+	}
+}
+
+.link-phone {
+	font-size: 18px;
+}
+
+.link-inline {
+	display: inline-flex;
+	align-items: center;
+	> .icon {
+		position: relative;
+		top: 1px;
+		margin-right: 12px;
+	}
+	
+	&-top {
+		align-items: flex-start;
+		> .icon {
+			position: relative;
+			top: 4px;
+		}
+	}
+}

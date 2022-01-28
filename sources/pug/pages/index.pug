@@ -1,0 +1,46 @@
+extends  ../_skeleton
+
+//- Includes
+
+include ../components/_ui-testimonials
+
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Home'
+block page
+	// Header Modern
+	include ../sections/header/_header-modern
+
+	// Swiper Slider
+	include ../sections/swiper/_swiper-modern
+
+	// Services Box
+	include ../sections/services/_section-services-box-modern
+
+	// About Us
+	include ../sections/about/_section-about-us-with-video
+
+	// Section counters
+	include ../sections/about/_section-counters
+
+	// Our Gallery
+	include ../sections/projects/_section-our-projects-isotope
+
+	// Opening the world
+	include ../sections/about/_section-parallax
+
+	//What our clients say
+	include ../sections/about/_section-testimonials
+
+	// Latest News
+	include ../sections/blog/_section-company-news-modern
+
+	// Get a Quote
+	include ../sections/call-to-action/_section-call-to-action-parallax
+
+	// Section Brands
+	include ../sections/about/_section-brands-1
+
+	// Footer Modern
+	include ../sections/footer/_footer-modern

@@ -1,0 +1,9 @@
+//- Video Youtube
+	@param {object} obj - parameters storage
+	@param {string} obj.image - required image background
+	@param {string}  obj.videoLink - required Youtube video link
+mixin video-youtube(obj)
+	.video
+		+jpg(obj.image)
+		a.video-link(data-lightgallery="item" href= obj.videoLink)
+			span.icon.mdi.mdi-play-circle

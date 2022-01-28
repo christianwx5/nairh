@@ -1,0 +1,6 @@
+mixin project-data(obj)
+	a(href='#').project-data
+		+jpg(obj.image)
+		.project-data-content
+			h5.project-data-title= obj.title
+			p.project-data-text= obj.text

@@ -1,0 +1,30 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-testimonials
+include ../components/_ui-team
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = '404'
+block page
+  // Header Default
+  include ../sections/header/_header-default
+
+  // Breadcrumbs
+  section.breadcrumbs-custom.bg-image.context-dark(style='background-image: url(images/bg-image-11-1920x663.jpg)')
+    .container
+      h1.breadcrumbs-custom-title 404
+
+  // 404
+  section.section.section-lg.bg-default.text-center
+    .container
+      .error-404
+        h3 Sorry, but the page was not found
+        h5 You may have mistyped the address or the page may have moved
+        ul.error-404-buttons
+          li: a.button.button-less.button-gray-700(href='index.html') Go to home page
+          li: a.button.button-secondary-light(href= links.contacts) Contact us
+
+  // Footer Classic
+  include ../sections/footer/_footer-classic

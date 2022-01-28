@@ -1,0 +1,201 @@
+/*
+* Icons
+*/
+
+//
+// Base styles
+//
+.icon {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 1;
+
+	&::before {
+		position: relative;
+		display: inline-block;
+		font-weight: 400;
+		font-style: normal;
+		speak: none;
+		text-transform: none;
+	}
+}
+
+//
+// Alternate icons
+//
+
+.icon-default {
+}
+
+.icon-primary {
+	color: $primary;
+}
+
+.icon-primary-light {
+	color: $secondary;
+}
+
+.icon-secondary {
+	color: $secondary;
+}
+
+.icon-gray-500 {
+	color: $gray-500;
+}
+
+a.icon-gray-500 {
+	&, &:focus, &:active {
+		color: $gray-500;
+	}
+	&:hover {
+	  color: $secondary;
+	}
+}
+
+//
+// Icon Shapes
+//
+.icon-circle {
+	border-radius: 50%;
+}
+
+//
+// Icon Sizes
+//
+.icon-xs {
+	font-size: 14px;
+}
+
+.icon-sm {
+}
+
+.icon-lg {
+	font-size: 18px;
+}
+
+.icon-xl {
+	font-size: 20px;
+}
+
+.icon-big-lg {
+	font-size: 26px;
+}
+
+.icon-big-xl {
+	font-size: 30px;
+}
+
+//
+// Icon custom
+//
+
+.icon-square {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 36px;
+	font-size: 17px;
+	text-align: center;
+
+	border: 2px solid $secondary;
+	
+	&.fa-twitter {
+		font-size: 18px;
+	}
+	&.fa-google-plus {
+		font-size: 14px;
+	}
+}
+
+.footer-classic.context-dark a.icon-square,
+.context-dark a.icon-square,
+a.icon-square {
+	&, &:focus, &:active {
+		color: $white;
+		background-color: transparent;
+	}
+	
+	&:hover {
+		color: $gray-600;
+		background-color: $secondary;
+	}
+}
+
+//
+// Icon Square Classic
+//
+.icon-square-classic {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 36px;
+	font-size: 17px;
+	color: $secondary;
+	background-color: $white;
+	border: 1px solid $gray-1;
+	
+	&.fa-twitter {
+		font-size: 18px;
+	}
+	
+	&.fa-google-plus {
+		font-size: 14px;
+	}
+}
+
+a.icon-square-classic {
+	&, &:focus, &:active {
+		color: $secondary;
+		background-color: $white;
+		border-color: $gray-1;
+	}
+	
+	&:hover {
+	  color: $white;
+		background-color: $secondary;
+		border-color: $secondary;
+	}
+}
+
+/*
+ * Icon Square Big
+*/
+.icon-square-big {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 51px;
+	height: 45px;
+	font-size: 22.5px;
+	color: $secondary;
+	background-color: $white;
+	border: 1px solid #ebebeb;
+	
+	&.fa-twitter {
+		font-size: 24px;
+	}
+	
+	&.fa-google-plus {
+		font-size: 19px;
+	}
+}
+
+a.icon-square-big {
+	&, &:focus, &:active {
+		color: $secondary;
+		background-color: $white;
+		border-color: $gray-1;
+	}
+	
+	&:hover {
+		color: $white;
+		background-color: $secondary;
+		border-color: $secondary;
+	}
+}
+
+/*
+ * Icon
+*/

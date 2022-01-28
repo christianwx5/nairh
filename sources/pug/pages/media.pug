@@ -1,0 +1,65 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-blog
+include ../components/_ui-pagination
+
+block variables
+  - var activeCategory = 'media'
+  - var pageName = 'Media'
+block page
+  // Header Default
+  include ../sections/header/_header-default
+
+  // Breadcrumbs
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    bgImage: 'bg-image-11-1920x663'
+  })
+
+  // Media
+  section.section.section-lg.bg-gray-100
+    .container
+      .row.row-30.justify-content-center
+        .col-sm-11.col-md-10.col-lg-6
+          +news-full-width({
+            image: 'media-01-286x306',
+            title: 'Top 10 Learning Activities',
+            time: 'February 16, 2018',
+            text: 'Molestie ac feugiat sed lectus vestibulum mattis. Sagittis eu volutpat odio facilisis mauris sit amet massa.'
+          })
+        .col-sm-11.col-md-10.col-lg-6
+          +news-full-width({
+            image: 'media-02-286x306',
+            title: 'Fine Crafts for Your Children',
+            time: 'May 22, 2018',
+            text: 'Rhoncus aenean vel elit scelerisque. Tellus integer feugiat scelerisque varius morbi enim nunc.'
+          })
+        .col-sm-11.col-md-10.col-lg-6
+          +news-full-width({
+            image: 'media-03-286x306',
+            title: 'Developing Kids’ Painting Skills',
+            time: 'July 01, 2018',
+            text: 'Mollis aliquam ut porttitor leo a diam sollicitudin tempor. Purus in massa tempor nec feugiat.'
+          })
+        .col-sm-11.col-md-10.col-lg-6
+          +news-full-width({
+            image: 'media-04-286x306',
+            title: 'Easy Science for Preschoolers',
+            time: 'August 25, 2018',
+            text: 'Fermentum odio eu feugiat pretium. Morbi tristique senectus et netus et malesuada fames.'
+          })
+          ul.pagination-media
+      .pagination-media-wrap
+        ul.pagination-media
+          li: a.pagination-media-active(href='#') 1
+          li: a(href='#') 2
+          li: a(href='#') 3
+          li: a(href='#') 4
+          li: span.pagination-media-disabled ...
+          li: a(href='#') 12
+
+
+  // Footer Classic
+  include ../sections/footer/_footer-classic

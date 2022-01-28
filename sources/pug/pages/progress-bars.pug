@@ -1,0 +1,110 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-counter
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Progress Bars'
+
+block page  
+	// Page Header
+	include ../sections/header/_header-default
+
+	// Breadcrumbs
+	+breadcrumbs({
+		category: activeCategory,
+		path: ['Progress Bars, Skill Bars, Counters'],
+		bgImage: 'bg-image-11-1920x663'
+	})
+
+	// Skill Bars
+	section.section.section-md.bg-default
+		.container
+			.text-center
+				h3 Progress Bars, Skill Bars, Counters
+				p.big.block-lg These elements are vital to every website’s design, and with them you are able to improve the overall look of your resource and attract more clients.
+
+			.row.justify-content-md-center.row-50.flex-md-row-reverse.justify-content-lg-between.align-items-md-end
+				.col-md-10.col-lg-6.col-xl-5
+					h4 Welcome to our website
+					p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers.
+
+				.col-md-10.col-lg-6
+					+progress-bar-linear({
+						title: "dedication",
+						valueTo: "75"
+					})
+
+					+progress-bar-linear({
+						title: "knowledge",
+						valueTo: "85"
+					})
+
+					+progress-bar-linear({
+						title: "professionalism",
+						valueTo: "80"
+					})
+
+	// Counters
+	section.section.section-xxs.bg-gray-700.text-center.context-dark.box-counter-wrap
+		.container
+			.row.row-30
+				.col-6.col-md-3
+					// Box counter
+					article.box-counter
+						.box-counter-main
+							span 36
+						p.box-counter-title Years of experience
+
+				.col-6.col-md-3
+					// Box counter
+					article.box-counter
+						.box-counter-main
+							.counter 17
+						p.box-counter-title new students
+
+				.col-6.col-md-3
+					// Box counter
+					article.box-counter
+						.box-counter-main
+							.counter 26
+						p.box-counter-title qualified teachers
+
+				.col-6.col-md-3
+					// Box counter
+					article.box-counter
+						.box-counter-main
+							.counter 12
+						p.box-counter-title newly developed programs
+
+	// Section Circle Progress Bars
+	section.section.section-md.bg-default.text-center
+		.container
+			.row.justify-content-center.row-30
+				.col-sm-5.col-lg-3
+					// Circle Progress Bar
+					.progress-bar-circle(data-value='0.73' data-gradient=colors.primary data-empty-fill='rgb(245,245,245)' data-size='181' data-thickness='5')
+						span
+					p.progress-bar-circle-title Leadership
+				.col-sm-5.col-lg-3
+					// Circle Progress Bar
+					.progress-bar-circle(data-value='0.11' data-gradient=colors.primary data-empty-fill='rgb(245,245,245)' data-size='181' data-thickness='5')
+						span
+					p.progress-bar-circle-title Management
+				.col-sm-5.col-lg-3
+					// Circle Progress Bar
+					.progress-bar-circle(data-value='0.13' data-gradient=colors.primary data-empty-fill='rgb(245,245,245)' data-size='181' data-thickness='5')
+						span
+					p.progress-bar-circle-title Innovation and creativity
+				.col-sm-5.col-lg-3
+					// Circle Progress Bar
+					.progress-bar-circle(data-value='0.59' data-gradient=colors.primary data-empty-fill='rgb(245,245,245)' data-size='181' data-thickness='5')
+						span
+					p.progress-bar-circle-title Resilience
+
+	hr
+
+	// Page Footer
+	include ../sections/footer/_footer-classic

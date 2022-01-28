@@ -1,0 +1,75 @@
+include ../../components/_ui-blog
+
+section.section.bg-default.section-lg.text-center
+	.container
+		h2 Latest News
+		.row
+			.col-xl-12
+				// Bootstrap tabs
+				#tabs.tabs-custom.tabs-news
+					// Tab panes
+					.tab-content
+						div#tabs-1.tab-pane.fade.show.active
+							+jpg('latest-news-01-573x612')
+
+						div#tabs-2.tab-pane.fade
+							+jpg('latest-news-02-573x612')
+
+						div#tabs-3.tab-pane.fade
+							+jpg('latest-news-03-573x612')
+					// Nav tabs
+					ul.nav.nav-tabs.nav-tabs-news
+						li.nav-item(role='presentation')
+							span.nav-link.active(data-href='#tabs-1' data-toggle='tab')
+								span.heading-4
+									a(href=links.post) Easy Ideas to Help Your Child Focus
+								span.list-inline-divided
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-clock
+										span February 16, 2018
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-thumb-up-outline
+										span 23
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-message-outline
+										a(href=links.post) 6
+
+								span.nav-tabs-text While it can be frustrating for you to give constant reminders, not remembering instructions is common for young children. Working...
+
+
+
+						li.nav-item(role='presentation')
+							span.nav-link(data-href='#tabs-2' data-toggle='tab')
+								span.heading-4
+									a(href=links.post) Why Kid-Size Classrooms are Useful
+								span.list-inline-divided
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-clock
+										span May 26, 2018
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-thumb-up-outline
+										span 23
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-message-outline
+										a(href=links.post) 6
+								span.nav-tabs-text Imagine being a pint-sized person just three feet tall. You know, kid-size. Now imagine how the world looks from this vantage point: Everything...
+
+						li.nav-item(role='presentation')
+							span.nav-link(data-href='#tabs-3' data-toggle='tab')
+								span.heading-4
+									a(href=links.post) Things Top Preschools Do For Kids
+								span.list-inline-divided
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-clock
+										span July 22, 2018
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-thumb-up-outline
+										span 23
+									span
+										span.icon.icon-xs.icon-secondary.mdi.mdi-message-outline
+										a(href=links.post) 6
+
+								span.nav-tabs-text If you are reading this, chances are you’re facing a tough choice—where your little love bug will spend his or her days when you go back to work...
+
+
+

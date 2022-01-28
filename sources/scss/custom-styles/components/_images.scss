@@ -1,0 +1,23 @@
+/*
+* Images
+*/
+
+// Standard img style
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.img-responsive {
+	width: 100%;
+}
+
+
+.img-layout-1 {
+	text-align: center;
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		margin-right: -30px;
+	}
+}

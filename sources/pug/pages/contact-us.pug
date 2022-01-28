@@ -1,0 +1,84 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'contact-us'
+	- var pageName = 'Contact Us'
+
+block page
+	// Page Header
+	include ../sections/header/_header-default
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'bg-image-11-1920x663'
+	})
+
+	// Mailform
+	section.section.section-lg.bg-default
+		.container
+			.row.align-items-md-center.row-30
+				.col-lg-8
+					.block-md.text-center
+						h3 Get in Touch
+						p We are available 24/7 by fax, e-mail or by phone. You can also use our quick contact form to ask a question about our classes and activities we provide.
+						form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+							.row.row-20
+								.col-md-6.row-10
+									.form-wrap
+										input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+										label.form-label(for='contact-name') Your Name
+								.col-md-6.row-10
+									.form-wrap
+										input#contact-phone.form-input(type='text' name='phone' data-constraints='@Numeric')
+										label.form-label(for='contact-phone') Phone
+								.col-12.row-10
+									.form-wrap
+										label.form-label(for='contact-message') Your Message
+										textarea#contact-message.form-input(name='message' data-constraints='@Required')
+								.col-md-6.row-10
+									.form-wrap
+										input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+										label.form-label(for='contact-email') E-mail
+								.col-md-6.row-10
+									button.button.button-block.button-secondary-light(type='submit') Send Message
+				.col-lg-4
+					.contact-box-wrap
+						.contact-box
+							.contact-box-item
+								p.contact-box-title Get social
+								ul.list-inline
+									li: a.icon.icon-xl.icon-gray-500.fa-facebook-f(href='#')
+									li: a.icon.icon-xl.icon-gray-500.fa-twitter(href='#')
+									li: a.icon.icon-xl.icon-gray-500.fa-google(href='#')
+									li: a.icon.icon-lg.icon-gray-500.fa-youtube(href='#')
+							.contact-box-item
+								p.contact-box-title Phone
+								.link-inline
+									span.icon.icon-xl.icon-secondary.material-icons-local_phone
+									a(href='tel:#') 1-800-1234-567
+							.contact-box-item
+								p.contact-box-title E-mail
+								.link-inline
+									span.icon.icon-xl.icon-secondary.mdi-email-outline
+									a(href='mailto:#') info@demolink.org
+							.contact-box-item
+								p.contact-box-title Address
+								.link-inline.link-inline-top
+									span.icon.icon-xl.icon-secondary.material-icons-location_on
+									a(href='#') 6036 Richmond hwy.,
+										br
+										| Alexandria, VA, 2230
+
+	//Google Map
+	section.section
+		//Please, add the data attribute data-key="YOUR_API_KEY" in order to insert your own API key for the Google map.
+		//Please note that YOUR_API_KEY should replaced with your key.
+		//Example: <div class="google-map-container" data-key="YOUR_API_KEY">
+		.google-map-container( data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-zoom='5' data-styles='[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]' )
+			.google-map
+			ul.google-map-markers
+				li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png' )
+
+	// Page Footer
+	include ../sections/footer/_footer-classic

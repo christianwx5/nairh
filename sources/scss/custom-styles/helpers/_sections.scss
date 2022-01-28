@@ -1,0 +1,297 @@
+/*
+* Sections
+*/
+$section-xs: 60px 0; // xs - 60
+$section-sm: 70px 0; // sm - 70
+$section-md: 80px 0; // md - 80
+$section-lg: 100px 0; // lg - 100
+$section-lg-max: 130px 0; // lg max - 130
+$section-xl: 150px 0; // xl - 150
+
+//
+// Section Spacing
+//
+
+.section-xxs {
+	padding: 30px 0 38px;
+}
+
+.section-xs,
+.section-sm,
+.section-md,
+.section-lg,
+.section-xl {
+	padding: 60px 0;
+}
+
+// Section collapse
+.section-collapse + .section-collapse {
+	padding-top: 0;
+}
+
+.section-collapse:last-child {
+	padding-bottom: 0;
+}
+
+// Section with bottom zero padding
+html [class*='section-'].section-bottom-0 {
+	padding-bottom: 0;
+}
+
+@include media-breakpoint-down(md) {
+	section.section-sm,
+	section.section-md,
+	section.section-lg,
+	section.section-xl,
+	section.section-xxl {
+		&:first-of-type {
+			padding-top: 40px;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.section-xs {
+		padding: $section-xs;
+	}
+	
+	.section-sm {
+		padding: 60px 0;
+	}
+	
+	.section-md {
+		padding: 70px 0;
+	}
+	
+	.section-lg,
+	.section-xl {
+		padding: 75px 0;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	
+	.section-sm,
+	.section-md {
+		padding: $section-sm;
+	}
+	
+	.section-lg,
+	.section-xl {
+		padding: 80px 0;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.section-md {
+		padding: $section-md;
+	}
+	
+	.section-lg {
+		padding: $section-lg;
+		
+		&.section-lg-max {
+			padding: $section-lg-max;
+		}
+		
+	}
+	
+	.section-xl {
+		padding-top: 120px;
+		padding-bottom: 130px;
+	}
+}
+
+//
+// Custom sections
+//
+
+// Section single
+.section-single {
+	display: flex;
+	text-align: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	
+	p {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	* + .rights {
+		margin-top: 35px;
+	}
+	* + .countdown-wrap {
+		margin-top: 20px;
+	}
+	.countdown-wrap + * {
+		margin-top: 35px;
+	}
+	
+	@include media-breakpoint-up(lg) {
+		* + .rights {
+			margin-top: 60px;
+		}
+		.countdown-wrap + * {
+			margin-top: 5px;
+		}
+	}
+	
+	.rd-mailform-wrap {
+		max-width: 670px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	
+	* + .rd-mailform-wrap {
+		margin-top: 25px;
+	}
+}
+
+.section-single-header {
+	padding: calc(1em + 3vh) 0 calc(1em + 2vh);
+}
+
+.section-single-main {
+	padding: calc(1em + 4vh) 0;
+}
+
+.section-single-footer {
+	padding: calc(1em + 2vh) 0 calc(1em + 3vh);
+}
+
+.section-single-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 100vh;
+	
+	> * {
+		width: 100%;
+	}
+}
+
+@supports (display: grid) {
+	.section-single-inner {
+		display: grid;
+		justify-items: center;
+		align-content: space-between;
+		grid-template-columns: 1fr;
+	}
+}
+
+//
+// Section Full
+//
+.section-full {
+	padding-top: (850px / 1920px  * 100%) / 2.5;
+	padding-bottom: (850px / 1920px  * 100%) / 2.5;
+	
+	h4 {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+	
+	p {
+		position: relative;
+		padding-left: 25px;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			left: 0;
+			height: 86%;
+			transform: translateY(-50%);
+			border-left: 7px solid $secondary;
+		}
+	}
+	
+	color: $gray-800;
+	
+	* + h4 { margin-top: 8px; }
+	* + p { margin-top: 15px; }
+	* + .button { margin-top: 25px; }
+}
+
+// Extra large <1200px
+@include media-breakpoint-down(lg) {
+	.section-full {
+		position: relative;
+		z-index: 1;
+		&:before {
+		  content: '';
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(#f8f9ef, .75);
+			pointer-events: none;
+		}
+	}
+}
+
+.section-full-item {
+	max-width: 400px;
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + h4 { margin-top: 15px; }
+	* + p { margin-top: 20px; }
+
+}
+
+* + .button { margin-top: 45px; }
+
+* + .offset-button  { margin-top: 26px; }
+
+/*
+ * Section Full Default
+*/
+.section-full-default {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 80.63vh;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	text-align: center;
+	
+	
+	h2 {
+		max-width: 435px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	h4 {
+		max-width: 190px;
+		margin-left: auto;
+		margin-right: auto;
+		font-weight: 400;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+	
+	.ie-11 & {
+		height: 80.63vh;
+	}
+	
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+	}
+	
+	
+	@media (min-width: 1200px) and (min-height: 857px) {
+		padding-bottom: 185px;
+	}
+}
+
+

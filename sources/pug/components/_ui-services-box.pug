@@ -1,0 +1,37 @@
+//- Services box
+	@param {object} obj - parameters storage
+	@param {string} obj.icon - required icon image
+	@param {string} links.services - required link or #
+	@param {string}  obj.title - require header
+	@param {string}  obj.text - require paragraph text
+mixin services-box(obj)
+	.box-services-simple
+		.box-services-simple-inner
+			.box-services-simple-icon: +png(obj.icon)
+			h4.box-services-simple-title: a(href=links.singleServices)= obj.title
+			p.box-services-simple-text= obj.text
+
+mixin services-hexagon-box(obj)
+	.box-services-hexagon
+			.hexagon-wrapper(class=obj.boxFill)
+				.hexagon
+				+png(obj.icon)
+			h4.box-services-hexagon-title: a(href='#')= obj.title
+			p.box-services-hexagon-text= obj.text
+
+mixin features-box(obj)
+	.box-features
+		.box-features-image
+			+png(obj.image)
+		h4.box-features-title= obj.title
+		.divider.divider-secondary
+		p.box-features-text= obj.text
+
+mixin box-services-full-width(obj)
+	.box-services-full-width
+		.box-services-full-width-inner
+			.box-services-full-width-image
+				+png(obj.image)
+			h4= obj.title
+			p= obj.text
+		a.box-services-full-width-button(href= links.singleServices) Read More

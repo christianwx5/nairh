@@ -1,0 +1,9 @@
+// RD Navbar Nav
+ul.rd-navbar-nav.rd-navbar-nav-left
+	each item, index in menu
+		- if (index < Math.ceil(menu.length / 2))
+			include _navbar-item
+ul.rd-navbar-nav.rd-navbar-nav-right
+	each item, index in menu
+		- if (index >= Math.ceil(menu.length / 2))
+			include _navbar-item

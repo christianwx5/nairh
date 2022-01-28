@@ -1,0 +1,24 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+  - var activeCategory = 'gallery'
+  - var pageName = 'Gallery'
+block page
+  // Header Default
+  include ../sections/header/_header-default
+
+  // Breadcrumbs
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    bgImage: 'bg-image-11-1920x663'
+  })
+
+  // Our Projects
+  include ../sections/projects/_section-our-projects-isotope
+
+  // Footer Classic
+  include ../sections/footer/_footer-classic

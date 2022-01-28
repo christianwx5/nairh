@@ -1,0 +1,30 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-testimonials
+include ../components/_ui-team
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = '503'
+block page
+  // Header Default
+  include ../sections/header/_header-default
+
+  // Breadcrumbs
+  section.breadcrumbs-custom.bg-image.context-dark(style='background-image: url(images/bg-image-11-1920x663.jpg)')
+    .container
+      h1.breadcrumbs-custom-title 503
+
+  // 404
+  section.section.section-lg.bg-default.text-center
+    .container
+      .error-404
+        h3 Service is Unavailable
+        h5 Sorry, we're offline right now to make our site even better. Please, come back<br> later and check what we've been up to.
+        ul.error-404-buttons
+          li: a.button.button-less.button-gray-700(href='index.html') Go to home page
+          li: a.button.button-secondary-light(href= links.contacts) Contact us
+
+  // Footer Classic
+  include ../sections/footer/_footer-classic

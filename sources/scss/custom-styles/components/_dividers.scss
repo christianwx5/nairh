@@ -1,0 +1,130 @@
+/*
+* Dividers
+*/
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+}
+
+.divider {
+	font-size: 0;
+	line-height: 0;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 72px;
+		height: 4px;
+		background-color: $primary;
+	}
+	
+	&-small {
+		&:after {
+			width: 45px;
+			height: 2px;
+		}
+	}
+}
+
+.divider-secondary {
+	&:after {
+		background-color: $secondary;
+	}
+}
+
+.divider-third {
+	margin-top: 22px;
+	font-size: 0;
+	line-height: 0;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 45px;
+		height: 3px;
+		background-color: $secondary-dark;
+	}
+
+	&-small {
+		&:after {
+			width: 45px;
+			height: 2px;
+		}
+	}
+}
+
+* + .divider { margin-top: 15px; }
+.divider + * { margin-top: 15px; }
+
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + .divider { margin-top: 30px; }
+	.divider + * { margin-top: 30px; }
+	* + .divider-small { margin-top: 20px; }
+	.divider-small + * { margin-top: 25px; }
+}
+
+/*
+ * Heading divider
+*/
+.heading-divider {
+	position: relative;
+	padding-left: 40px;
+	
+	&:before {
+	  content: '';
+		position: absolute;
+		left: 0;
+		top: 13px;
+		width: 30px;
+		border-top: 3px solid $primary;
+	}
+	
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		padding-left: 65px;
+		
+		&:before {
+			top: 16px;
+			width: 46px;
+			border-width: 4px;
+		}
+	}
+}
+
+
+/*
+ * Divider Vertical
+*/
+.divider-vertical {
+	display: block;
+	&:before {
+		display: inline-block;
+	  content: '';
+		width: 3px;
+		height: 35px;
+		background-color: $secondary;
+	}
+	
+	&-secondary-light {
+		&:before {
+			background-color: $secondary-light;
+		}
+	}
+	
+	* + & { margin-top: 10px; }
+	& + * { margin-top: 8px; }
+	
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		&:before {
+			width: 4px;
+			height: 45px;
+		}
+		* + & { margin-top: 15px; }
+		& + * { margin-top: 12px; }
+	}
+}

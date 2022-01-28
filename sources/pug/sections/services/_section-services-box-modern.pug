@@ -1,0 +1,25 @@
+include ../../components/_ui-services-box
+
+section.section.bg-gray-2.section-lg
+	.container
+		.row.justify-content-between.row-list-bordered-3-elements
+			.col-md-6.col-lg-4
+				+services-hexagon-box({
+					title: 'Learning & Fun',
+					icon: 'icon-learning-white-40x40',
+					text: 'A wide variety of activities to stimulate language learning, such as arts and crafts, baking, music.'
+				})
+			.col-md-6.col-lg-4
+				+services-hexagon-box({
+					title: 'Qualified Teachers',
+					icon: 'icon-teachers-white-48x40',
+					text: 'Our experienced teachers encourage children to question, solve problems, and express themselves creatively.',
+					boxFill:'box-fill-primary box-text-fill'
+				})
+			.col-md-6.col-lg-4
+				+services-hexagon-box({
+					title: 'Healthy Meals',
+					icon: 'icon-mealch-white-53x40',
+					text: 'Organic food, fresh water, and juice delivered to the kindergarten are available every day.',
+					boxFill:'box-fill-secondary'
+				})

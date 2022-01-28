@@ -1,0 +1,115 @@
+mixin project-carousel-item(obj)
+	.row.justify-content-between.row-30
+		.col-lg-4
+			.project-info-wrap
+				h4= obj.title
+				p= obj.text
+				.project-info
+					.project-info-item
+						.project-info-title: span Area
+						.project-info-value
+							span= obj.info[0]
+							=" "
+							span.project-info-value-metrics m
+								span 2
+					.project-info-item
+						.project-info-title: span terms
+						.project-info-value
+							span= obj.info[1]
+							=" "
+							span.project-info-value-metrics Days
+
+		.col-lg-7
+			.slick-slider.slick-slider-projects(
+			id= obj.parent
+			data-for= '#'+ obj.child
+			data-child= '#'+  obj.child
+			data-loop='false'
+			data-fade='true'
+			data-select='true'
+			data-draggable='true'
+			data-items='1'
+			data-sm-items='1'
+			data-md-items='1'
+			data-lg-items='1'
+			data-xl-items='1'
+
+			)
+				each item in obj.images
+					.item: +jpg(item)
+
+
+			.slick-slider.slick-slider-projects-thumbs(
+			id= obj.child
+			data-arrows='true'
+			data-loop='false'
+			data-dots='false'
+			data-draggable='true'
+			data-swipe='true'
+			data-items='1'
+			data-for= '#' + obj.parent
+			data-xs-items='2'
+			data-sm-items='3'
+			data-md-items='3'
+			data-lg-items='2'
+			data-select='true'
+			data-xl-items='3'
+			data-slide-to-scroll='1')
+				each item in obj.images
+					.item: img(src='images/' + item + '.jpg', alt='', width='171', height='126')
+
+mixin project-carousel-item-modern(obj)
+	.row.justify-content-between.row-30
+		.col-lg-5
+			.project-single-block
+				h3= obj.title
+				each textItem in obj.texts
+					p= textItem
+				if (obj.list)
+					.project-single-block-list
+						each listItem in obj.list
+							dl
+								dt
+									span.icon.mdi(class= listItem.icon)
+									=" "
+									= listItem.dt
+								dd= listItem.dd
+
+		.col-lg-7
+			.slick-slider.slick-slider-projects(
+			id= obj.parent
+			data-for= '#'+ obj.child
+			data-child= '#'+  obj.child
+			data-loop='false'
+			data-fade='true'
+			data-select='true'
+			data-draggable='true'
+			data-items='1'
+			data-sm-items='1'
+			data-md-items='1'
+			data-lg-items='1'
+			data-xl-items='1'
+
+			)
+				each item in obj.images
+					.item: +jpg(item)
+
+
+			.slick-slider.slick-slider-projects-thumbs(
+			id= obj.child
+			data-arrows='true'
+			data-loop='false'
+			data-dots='false'
+			data-draggable='true'
+			data-swipe='true'
+			data-items='1'
+			data-for= '#' + obj.parent
+			data-xs-items='2'
+			data-sm-items='3'
+			data-md-items='4'
+			data-lg-items='2'
+			data-select='true'
+			data-xl-items='3'
+			data-slide-to-scroll='1')
+				each item in obj.images
+					.item: img(src='images/' + item + '.jpg', alt='', width='171', height='126')

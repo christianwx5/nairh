@@ -1,0 +1,185 @@
+/*
+*
+* Counter
+*/
+
+/*
+ * Box Counter
+*/
+
+.box-counter {
+	position: relative;
+	text-align: center;
+	color: $gray-700;
+}
+
+.box-counter-title {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.box-counter-main {
+	font-family: $font-family-sec;
+	font-size: 60px;
+	line-height: 1.5;
+	letter-spacing: 0.065em;
+	font-weight: 700;
+	
+	.counter-zero {
+		&:before {
+		  content: '0';
+		}
+	}
+	
+	.counter-plus {
+		position: relative;
+		padding-right: 20px;
+		&:after {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		  content: '+';
+			font-size: 0.367em;
+		}
+		
+		// Extra large ≥1200px
+		@include media-breakpoint-up(xl) {
+			padding-right: 30px;
+		}
+	}
+	
+	> * {
+		display: inline;
+		font: inherit;
+	}
+	
+	.small {
+		font-size: 28px;
+	}
+	
+	.small_top {
+		position: relative;
+		top: .2em;
+		vertical-align: top;
+	}
+}
+
+.box-counter-divider {
+	font-size: 0;
+	line-height: 0;
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 80px;
+		height: 2px;
+		background: $primary;
+	}
+}
+
+* + .box-counter-title {
+	margin-top: 0;
+}
+
+* + .box-counter-main {
+	margin-top: 20px;
+}
+
+* + .box-counter-divider {
+	margin-top: 10px;
+}
+
+@include media-breakpoint-up(md) {
+	.box-counter-wrap {
+		overflow: hidden;
+		[class*='col-'] {
+			position: relative;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -280px;
+				bottom: -280px;
+				border-left: 1px solid rgba(#9e9e9e, .2);
+			}
+			
+			&:after {
+				content: '';
+				position: absolute;
+				right: -1px;
+				top: -280px;
+				bottom: -280px;
+				border-left: 1px solid rgba(#9e9e9e, .2);
+			}
+		}
+	}
+	
+	.box-counter-wrap-modern {
+		overflow: hidden;
+		[class*='col-'] + [class*='col-'] {
+			.box-counter-main {
+				position: relative;
+				&:before {
+					content: '';
+					position: absolute;
+					left: -22px;
+					top: 50%;
+					width: 15px;
+					height: 15px;
+					transform: translateY(-50%);
+					background-color: #fdd482;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	
+	
+	
+	.box-counter-main {
+		font-size: $h1-font-size;
+		line-height: 1.2;
+		
+		.small {
+			font-size: 36px;
+		}
+	}
+	
+	* + .box-counter-main {
+		margin-top: 30px;
+	}
+	* + .box-counter-divider {
+		margin-top: 15px;
+	}
+	* + .box-counter-title {
+		margin-top: 18px;
+	}
+	
+	* + .box-counter-title {
+		margin-top: -9px;
+	}
+}
+
+.context-dark,
+.bg-gray-700,
+.bg-primary,
+.bg-third {
+	.box-counter {
+		color: $white;
+	}
+	
+	.box-counter-divider {
+		&::after {
+			background: $white;
+		}
+	}
+}
+
+.bg-gray-700 {
+}

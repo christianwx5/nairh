@@ -1,0 +1,186 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-blog
+
+block variables
+	- var activeCategory = 'media'
+	- var pageName = 'Media Post'
+block page
+	// Header Default
+	include ../sections/header/_header-default
+
+	// Breadcrumbs
+	+breadcrumbs({
+		title: 'media post',
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'bg-image-11-1920x663'
+	})
+
+	// Media Post
+	section.section.section-lg.bg-gray-100
+		.container
+			.row.row-30
+				.col-lg-8
+					.post-single
+						+jpg('post-single-01-770x427')
+						.post-single-body
+							h4 Top 10 Learning Activities
+							p Pharetra pharetra massa massa ultricies mi quis hendrerit. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Et tortor at risus viverra adipiscing at in. Condimentum mattis pellentesque id nibh tortor. Consequat mauris nunc congue.
+							p Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Mattis nunc sed blandit libero volutpat sed cras ornare arcu. Ut morbi tincidunt augue interdum velit euismod in. Vitae tortor condimentum lacinia quis vel eros donec. Nunc congue nisi vitae suscipit tellus mauris. Morbi blandit cursus risus at ultrices mi tempus imperdiet nulla. Interdum consectetur libero id faucibus nisl. Sed vulputate mi sit amet mauris commodo.
+							article.quote-primary
+								.quote-primary-body
+									svg.quote-primary-mark(version='1.1' xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='21px', height='15px', viewbox='0 0 21 15', overflow='scroll', xml:space='preserve', preserveAspectRatio='none')
+										path(d='M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z')
+									.quote-primary-text: h4.q There’s a variety of activities available to our little students throught the year.
+							p Etiam erat velit scelerisque in dictum non. Amet cursus sit amet dictum sit amet justo donec. Mauris nunc congue nisi vitae. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus.
+							ul.post-single-meta
+								li: ul.list-inline
+									li
+										span.icon.icon-xs.icon-secondary.mdi.mdi-clock
+										a(href= links.post) February 16, 2018
+									li
+										span.icon.icon-xs.icon-secondary.mdi.mdi-thumb-up-outline
+										a(href= links.post) 23
+									li
+										span.icon.icon-xs.icon-secondary.mdi.mdi-message-outline
+										a(href= links.post) 3
+								li: ul.list-inline
+									li Share this post
+									li
+										ul.list-inline-xs
+											li: a.icon.fa-facebook-f(href='#')
+											li: a.icon.fa-twitter(href='#')
+											li: a.icon.fa-google-plus(href='#')
+											li: a.icon.fa-pinterest-p(href='#')
+					.post-related
+						h5 Related Posts
+						.row.row-20
+							.col-md-6
+								+news-recent({
+									image: 'post-recent-01-368x232',
+									title: 'Fine Crafts for Your Children',
+									time: 'February 16, 2018'
+								})
+							.col-md-6
+								+news-recent({
+									image: 'post-recent-02-368x232',
+									title: 'Easy Science for Preschoolers',
+									time: 'May 26,  2018'
+								})
+
+					.post-comments
+						h5 3 comments
+						.row
+							.col-lg-12
+								.comment-wrap
+									.comment
+										.comment-image: +png('comment-01-65x65')
+										.comment-body
+											.comment-body-header
+												.comment-name: span Edward
+												.comment-time: a(href='#') 1 day ago
+											p Thank you for such an interesting article! Actually, painting is one of my favorite topics when it comes to renovation of my house. Though many consider it to be simple, it sure isn’t. I’m glad that you explained the main points of successful room painting. However, I hope you will pay your attention to some additional recommendations that make the process of painting even easier and lead to an even greater result. Thanks again!
+											ul.list-inline
+												li
+													span.icon.mdi.mdi-thumb-up-outline
+													a(href='#') 32
+												li
+													span.icon.mdi.mdi-comment-outline
+													a(href='#') Reply
+
+											.comment
+												.comment-image: +png('comment-02-60x61')
+												.comment-body
+													.comment-body-header
+														.comment-name: span Nina
+														.comment-time: a(href='#') 3 day ago
+													p I totally agree with you, painting can be described in a lot more aspects. Still, for beginners, it is the No. 1 set of recommendations that the author has described here.
+													ul.list-inline
+														li
+															span.icon.mdi.mdi-thumb-up-outline
+															a(href='#') 32
+														li
+															span.icon.mdi.mdi-comment-outline
+															a(href='#') Reply
+
+									.comment
+										.comment-image: +png('comment-03-65x66')
+										.comment-body
+											.comment-body-header
+												.comment-name: span John
+												.comment-time: a(href='#') 3 day ago
+											p Every word you say here is true because I myself have experienced it lately. Painting a room is not an easy task at all and such tips help a lot when you don’t know where to start. I sincerely hope you won’t stop only on painting and will describe other interesting topics, which are related not only to renovation but also to other services you provide. I’m looking forward to your future posts, they’re very informative and sometimes even educational.
+											ul.list-inline
+												li
+													span.icon.mdi.mdi-thumb-up-outline
+													a(href='#') 32
+												li
+													span.icon.mdi.mdi-comment-outline
+													a(href='#') Reply
+
+									.comment
+										.comment-image: +png('comment-04-65x66')
+										.comment-body
+											.comment-body-header
+												.comment-name: span Miranda
+											form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post')
+												.form-wrap
+													label.form-label(for='contact-2-message') Your comment
+													textarea#contact-2-message.form-input(name='message' data-constraints='@Required')
+												button.button.button-secondary(type='submit') Submit
+
+				.col-lg-4
+					.post-single-sidebar
+						.row.row-30.row-xl-60
+							.col-md-6.col-lg-12
+								.post-single-sidebar-item.post-single-sidebar-item-no-padding
+									form.rd-search(action='search-results.html' method='GET')
+										.form-wrap
+											label.form-label(for='rd-sidebar-search') Search the blog...
+											input(class='rd-sidebar-search form-input' id='rd-sidebar-search' type='text' name='s' autocomplete="off")
+											button.rd-search-form-submit.fl-bigmug-line-search74(type='submit')
+								.post-single-sidebar-item.text-center
+									h5 Latest Posts
+									.post-minimal-wrap
+										a.post-minimal(href= links.post)
+											span.post-minimal-image: +jpg('post-minimal-01-92x78')
+											span.post-minimal-body
+												span.post-minimal-title Drawing for Preschoolers: 15 Useful Activities
+												span.post-minimal-time Feb 4, 2018 / 1 Comment
+										a.post-minimal(href= links.post)
+											span.post-minimal-image: +jpg('post-minimal-02-92x78')
+											span.post-minimal-body
+												span.post-minimal-title Writing Short Stories as a Way to Develop Creativity
+												span.post-minimal-time Feb 4, 2018 / 1 Comment
+										a.post-minimal(href= links.post)
+											span.post-minimal-image: +jpg('post-minimal-03-92x78')
+											span.post-minimal-body
+												span.post-minimal-title Where to Get Crafts Supplies for Your Kid
+												span.post-minimal-time Feb 4, 2018 / 1 Comment
+							.col-md-6.col-lg-12
+								.post-single-sidebar-item
+									.post-single-newsletter
+										h5 Newsletter
+										p Enter your e-mail to get the latest news.
+										form.rd-form.rd-mailform(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+											.form-wrap
+												input.form-input(id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required")
+												label.form-label(for="subscribe-form-email") Your e-mail address...
+											.form-button
+												button.button.button-block.button-gray-600(type="submit") Subscribe
+								.post-single-sidebar-item.text-center
+									h5 Tags
+									ul.list-tags
+										li: a(href='#') Lessons
+										li: a(href='#') Teacher
+										li: a(href='#') Education
+										li: a(href='#') News
+										li: a(href='#') Kids
+										li: a(href='#') Article
+
+
+
+	// Footer Classic
+	include ../sections/footer/_footer-classic

@@ -1,0 +1,59 @@
+include ../../components/_ui-projects
+
+section.section.section-md.bg-default.text-center
+	.container
+		if activeCategory == 'home'
+			h2 Our gallery
+		.isotope-wrap
+			.row.row-30
+				// Isotope Filters
+				.col-lg-12
+					.isotope-filters.isotope-filters-horizontal.isotope-filters-classic
+						button.isotope-filters-toggle.button.button-secondary-light(data-custom-toggle='#isotope-filters', data-custom-toggle-disable-on-blur="true") Filter
+							span.caret
+						ul.isotope-filters-list.inline-list#isotope-filters
+							li: a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All
+							li: a(data-isotope-filter='construction', data-isotope-group='gallery', href='#') Math Class
+							li: a(data-isotope-filter='remodeling', data-isotope-group='gallery', href='#') Music Class
+							li: a(data-isotope-filter='interior-design', data-isotope-group='gallery', href='#') Dance Class
+
+				// Isotope Content
+				.col-lg-12
+					.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery')
+						.row.row-30.offset-top-30
+							.col-sm-6.col-lg-4.isotope-item(data-filter='construction')
+								+project-data({
+									image: 'project-01-370x287',
+									title: projectText.titles[0],
+									text: projectText.texts[0]
+								})
+							.col-sm-6.col-lg-4.isotope-item(data-filter='construction')
+								+project-data({
+									image: 'project-02-370x287',
+									title: projectText.titles[1],
+									text: projectText.texts[1]
+								})
+							.col-sm-6.col-lg-4.isotope-item(data-filter='remodeling')
+								+project-data({
+									image: 'project-03-370x287',
+									title: projectText.titles[2],
+									text: projectText.texts[2]
+								})
+							.col-sm-6.col-lg-4.isotope-item(data-filter='remodeling')
+								+project-data({
+									image: 'project-04-370x287',
+									title: projectText.titles[3],
+									text: projectText.texts[3]
+								})
+							.col-sm-6.col-lg-4.isotope-item(data-filter='interior-design')
+								+project-data({
+									image: 'project-05-370x287',
+									title: projectText.titles[4],
+									text: projectText.texts[4]
+								})
+							.col-sm-6.col-lg-4.isotope-item(data-filter='interior-design')
+								+project-data({
+									image: 'project-06-370x287',
+									title: projectText.titles[5],
+									text: projectText.texts[5]
+								})

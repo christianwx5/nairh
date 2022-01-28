@@ -1,0 +1,614 @@
+/*
+* Lists
+*/
+
+/*
+* Vertical list
+*/
+.list {
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+.list-xs > li + li {
+	margin-top: 5px;
+}
+
+.list-sm > li + li {
+	margin-top: 10px;
+}
+
+.list-md > li + li {
+	margin-top: 18px;
+}
+
+.list-lg > li + li {
+	margin-top: 25px;
+}
+
+.list-xl > li + li {
+	margin-top: 30px;
+}
+
+@include media-breakpoint-up(md) {
+	.list-xl > li + li {
+		margin-top: 75px;
+	}
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	.list-xl > li + li {
+		margin-top: 90px;
+	}
+}
+
+/*
+* List inline
+*/
+.list-inline {
+	> li {
+		display: inline-block;
+	}
+}
+
+.list-inline-middle {
+	> li {
+		vertical-align: middle;
+	}
+}
+
+html {
+	
+	.list-inline-xs {
+		@include spacing(8px, 8px);
+	}
+	
+	.list-inline-md {
+		@include spacing(20px, 8px);
+
+		@include media-breakpoint-up(lg) {
+			@include spacingX(30px);
+		}
+	}
+}
+
+* + .list-inline-xs { margin-top: 13px; }
+
+// Large ≥992px
+@include media-breakpoint-up(lg) {
+	* + .list-inline-xs { margin-top: 22px; }
+}
+
+
+
+.list-inline-divided {
+	> span,
+	> li {
+		display: inline-block;
+	}
+	
+	@include spacing(15px, 5px);
+	
+	// Medium ≥576px
+	@include media-breakpoint-up(sm) {
+		
+		@include spacing(30px, 5px);
+		
+		> span,
+		> li {
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 18px;
+				border-left: 1px solid $gray-1;
+			}
+			
+			&:last-child {
+				&:before {
+				  content: '';
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+* + .list-inline-divided { margin-top: 12px; }
+
+//
+// Row List Bordered
+//
+.row-list-bordered {
+	text-align: center;
+	// Large ≥992px
+	@include media-breakpoint-up(md) {
+	  > [class*='col-'] {
+			position: relative;
+			&:after {
+			  content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 83px;
+				transform: translateY(-50%);
+				border-left: 1px solid $gray-1;
+			}
+		
+			&:nth-child(1),
+			&:nth-child(5),
+			&:nth-child(9) {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		
+		.parallax-dark & {
+			> [class*='col-'] {
+				&:after {
+				  border-color: rgba($gray-1, .21);
+				}
+			}
+		}
+	}
+	
+
+}
+
+
+.row-list-bordered-3-elements {
+	text-align: center;
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+		> [class*='col-'] {
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 100%;
+				transform: translateY(-50%);
+				border-left: 1px solid $gray-1;
+			}
+			
+			&:nth-child(1),
+			&:nth-child(4),
+			&:nth-child(7) {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/*
+* List terms
+*/
+.list-terms {
+	max-width: 223px;
+	
+	dl {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		&:nth-child(1) {
+			dt,
+			dd {
+				padding-top: 0;
+			}
+		}
+		
+		&:nth-last-child(1) {
+			dt,
+			dd {
+				padding-bottom: 0;
+			}
+		}
+	}
+	
+	dt,
+	dd {
+		padding: 10px 5px;
+	}
+	
+	dl + dl {
+		border-top: 1px solid $gray-800;
+	}
+}
+
+* + .list-terms {
+	margin-top: 25px;
+}
+
+.context-dark {
+	.list-terms {
+		dl + dl {
+			border-color: rgba($white, .3);
+		}
+	}
+}
+
+//
+// List links
+//
+
+.list-link {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 270px;
+	
+	> li {
+		position: relative;
+		margin-bottom: 11px;
+		padding-left: 15px;
+		flex-basis: 47%;
+		width: 47%;
+		
+		&:before {
+			content: '\f105';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		  font-family: $fa;
+		}
+	}
+}
+
+.context-dark {
+	.list-link {
+		
+		> li {
+			&:before {
+			  color: $secondary;
+			}
+		}
+		
+		a {
+			@include link($white, $secondary)
+		}
+	}
+}
+
+//
+// List contacts
+//
+
+.list-contacts {
+	.icon {
+		min-width: 14px;
+		margin-right: 15px;
+	}
+	
+	> li {
+		margin-bottom: 5px;
+		display: flex;
+		align-items: flex-start;
+	}
+	
+	> li.centered {
+		align-items: center;
+	}
+	
+	> li + li {
+		margin-top: 8px;
+	}
+}
+
+
+
+/*
+* Index list
+*/
+.index-list {
+	counter-reset: li;
+
+	> li {
+		.list-index-counter {
+			&:before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+			}
+		}
+	}
+}
+
+/*
+ * Index List Modern
+*/
+.index-list-modern {
+	counter-reset: li;
+	
+	> li {
+		.list-index-counter {
+			&:before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+			}
+		}
+		
+		+ li {
+			margin-top: 25px;
+		}
+		
+	}
+}
+
+.index-list-modern-block {
+	position: relative;
+	max-width: 380px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	text-align: center;
+	color: $gray-800;
+	background-color: $secondary-light;
+	
+	.list-index-counter {
+		line-height: 1.1;
+		font-family: $font-family-sec;
+		font-size: 3.857em;
+		font-weight: 700;
+		color: #e8c950;
+	}
+	
+	* + p { margin-top: 6px; }
+}
+
+// Medium ≥576px
+@include media-breakpoint-up(sm) {
+	.index-list-modern-block {
+		max-width: 450px;
+		padding: 20px 130px 20px 20px;
+		text-align: left;
+		
+		.list-index-counter {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 15px;
+			font-size: 4.857em;
+		}
+	}
+}
+
+// Large ≥992px
+@include media-breakpoint-up(lg) {
+	.index-list-modern-block {
+		max-width: 390px;
+		margin-right: 0;
+		padding: 20px 105px 20px 20px;
+		border-color: $secondary-light;
+	}
+	
+	.index-list-modern-triangle {
+		position: absolute;
+		right: 100%;
+		top: 50%;
+		transform: translateY(-50%);
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	.index-list-modern-block {
+		max-width: 496px;
+		margin-left: auto;
+		padding: 15px 185px 30px 45px;
+		
+		.list-index-counter {
+			font-size: 6.857em;
+		}
+	}
+}
+
+/*
+* Marked list
+*/
+.list-marked {
+	padding-left: 25px;
+	text-align: left;
+
+	> li {
+		text-indent: -25px;
+		padding-left: 25px;
+		&::before {
+			position: relative;
+			display: inline-block;
+			left: 25px;
+			top: -1px;
+			min-width: 25px;
+			content: '\f105';
+			font: 400 14px/24px $fa;
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 8px;
+	}
+}
+
+* + .list-marked {
+	margin-top: 15px;
+}
+
+p + .list-marked {
+	margin-top: 10px;
+}
+
+/*
+* Ordered List
+*/
+.list-ordered {
+	counter-reset: li;
+	padding-left: 25px;
+	text-align: left;
+
+	> li {
+		position: relative;
+		padding-left: 25px;
+
+		&:before {
+			content: counter(li, decimal) '.';
+			counter-increment: li;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 15px;
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+* + .list-ordered {
+	margin-top: 15px;
+}
+
+
+//
+// List Square
+//
+.list-square {
+	font-weight: 700;
+	
+	> li {
+		position: relative;
+		padding-left: 25px;
+		
+		&:before {
+		  content: '';
+			position: absolute;
+			left: 0;
+			top: 53%;
+			width: 12px;
+			height: 12px;
+			background-color: $secondary;
+			transform: translateY(-50%);
+		}
+	}
+	
+	> li + li { margin-top: 8px; }
+	
+	a {
+		@include link($gray-800, $primary)
+	}
+}
+
+* + .list-square { margin-top: 14px; }
+.list-square + .button { margin-top: 15px; }
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+	* + .list-square { margin-top: 20px; }
+	.list-square + .button { margin-top: 25px; }
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	.list-square {
+		font-size: 16px;
+		
+		> li + li { margin-top: 13px; }
+	}
+	* + .list-square { margin-top: 30px; }
+	.list-square + .button { margin-top: 47px; }
+}
+
+//
+// List inline info
+//
+
+.list-inline-info {
+
+}
+
+//
+// List Address
+//
+.list-address {
+	@include spacing(30px, 15px);
+	> li {
+		display: inline-block;
+	}
+	
+	a {
+		@include link($gray-800, $secondary);
+	}
+	
+	dt + dd { margin-top: 7px; }
+}
+
+// Extra large ≥992px
+@include media-breakpoint-up(sm) {
+  .list-address {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/*
+ * List Tags
+*/
+.list-tags {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: left;
+	@include spacing(6px, 10px);
+
+	
+	a {
+		display: block;
+		text-align: center;
+		padding: 8px 10px;
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		border: 2px solid;
+		&, &:focus, &:active {
+			color: $gray-500;
+			background-color: $white;
+			border-color: #ebebeb;
+		}
+		
+		&:hover {
+		  color: $white;
+			border-color: $secondary;
+			background-color: $secondary;
+		}
+	}
+	
+	* + & { margin-top: 30px; }
+}
+
+/*
+ * List Typography
+*/
+.list-typography {
+	h1 + p { margin-top: 5px; }
+	h2 + p { margin-top: 15px; }
+	h3 + p { margin-top: 15px; }
+}

@@ -1,0 +1,179 @@
+/*
+* Backgrounds
+*/
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+		
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+		
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+/*
+* Light Backgrounds
+*/
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+.bg-gray-2 {
+	@include bg-behaviour($gray-2);
+}
+
+
+
+/*
+* Dark Backgrounds
+*/
+
+.bg-third {
+	@extend %context-dark;
+	@include bg-behaviour($third);
+}
+
+.bg-gray-600 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-600);
+}
+
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+/*
+* Accent Backgrounds
+*/
+.bg-primary {
+	@extend %context-dark;
+	& + & {
+		padding-top: 0;
+	}
+}
+
+/*
+* Background Image
+*/
+.bg-image {
+}
+
+[class^='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+// Medium <768px
+@include media-breakpoint-down(sm) {
+	.bg-triangle {
+		padding-top: 40px;
+		padding-bottom: 60px;
+		.section-lg {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+	.bg-triangle {
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: calc(50% - #{map-get($grid-breakpoints, md)} / 2 + #{map-get($grid-breakpoints, md)} / 12 * 4.75);
+			background-color: $secondary;
+		}
+	}
+	
+
+	.bg-triangle {
+		&.bg-gray-100 {
+			&:before {
+				background-color: #e4e5ec;
+			}
+		}
+	}
+	
+	.bg-triangle-item {
+		position: absolute;
+		left: calc(50% - #{map-get($grid-breakpoints, md)} / 2 + #{map-get($grid-breakpoints, md)} / 12 * 4.75);
+		top: 0;
+		bottom: 0;
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-color: transparent transparent transparent $secondary;
+	}
+	
+	.bg-gray-100 {
+		.bg-triangle-item {
+			border-color: transparent transparent transparent #e4e5ec;
+		}
+	}
+}
+
+// Large ≥992px
+@include media-breakpoint-up(lg) {
+	.bg-triangle {
+		&:before {
+			width: calc(50% - #{map-get($grid-breakpoints, lg)} / 2 + #{map-get($grid-breakpoints, lg)} / 12 * 4);
+		}
+	}
+	.bg-triangle-item {
+		left: calc(50% - #{map-get($grid-breakpoints, lg)} / 2 + #{map-get($grid-breakpoints, lg)} / 12 * 4);
+	}
+}
+
+// Mega large ≥1200px
+@include media-breakpoint-up(xl) {
+	.bg-triangle {
+		&:before {
+			width: calc(50% - #{map-get($grid-breakpoints, xl)} / 2 + 345px);
+		}
+	}
+	.bg-triangle-item {
+		left: calc(50% - #{map-get($grid-breakpoints, xl)} / 2 + 345px);
+	}
+}

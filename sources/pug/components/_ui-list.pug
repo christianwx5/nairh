@@ -1,0 +1,13 @@
+mixin index-list-modern(obj)
+	ul.index-list-modern
+		each item in obj.list
+			li
+				.index-list-modern-block(
+				data-triangle='.index-list-modern-triangle'
+				data-triangle-direction='left'
+				data-triangle-length='35'
+				)
+					.index-list-modern-triangle
+					.list-index-counter
+					h4= item.title
+					p= item.text
